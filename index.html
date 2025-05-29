@@ -26,9 +26,9 @@
             animation: gradient-animation 15s ease infinite;
         }
 
-        /* Animasi untuk menu samping */
+        /* Animasi untuk menu samping (sidebar) */
         .sidebar {
-            transform: translateX(100%); /* Sembunyikan menu di luar layar */
+            transform: translateX(100%); /* Sembunyikan menu di luar layar (kanan) */
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Animasi slide-in/out */
         }
 
@@ -98,6 +98,7 @@
             animation: slideInFadeIn 0.5s ease-out forwards;
         }
 
+        /* Delay untuk animasi staggered */
         .sidebar.open .menu-item:nth-child(1) { animation-delay: 0.1s; }
         .sidebar.open .menu-item:nth-child(2) { animation-delay: 0.2s; }
         .sidebar.open .menu-item:nth-child(3) { animation-delay: 0.3s; }
@@ -145,6 +146,9 @@
             <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">IT'S ME</div>
             <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">ME BENTLEY HOSTING</div>
             <img src="https://placehold.co/600x400/8A2BE2/FFFFFF?text=AK+12+Girls+Frontline+Sexy" alt="AK 12 Girls Frontline Sexy" class="w-full h-auto rounded-lg">
+        </div>
+        <div class="mt-8 text-center text-white text-base opacity-90 max-w-md">
+            <p>Bentley Hosting menyediakan berbagai solusi panel, script, dan bot untuk kebutuhan digital Anda.</p>
         </div>
     </main>
 
