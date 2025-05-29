@@ -30,6 +30,8 @@
         .sidebar {
             transform: translateX(100%); /* Sembunyikan menu di luar layar (kanan) */
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Animasi slide-in/out */
+            height: 100vh; /* PENTING: Memastikan sidebar memenuhi tinggi viewport */
+            overflow-y: auto; /* Memungkinkan scroll internal jika konten terlalu banyak (meskipun sudah dioptimalkan) */
         }
 
         .sidebar.open {
@@ -152,7 +154,7 @@
         </div>
     </main>
 
-    <nav id="sidebar" class="sidebar fixed top-0 right-0 h-full w-64 md:w-80 bg-gradient-to-br from-purple-800 to-blue-800 shadow-2xl z-50 p-6 flex flex-col space-y-4 rounded-l-xl border-l border-white border-opacity-20">
+    <nav id="sidebar" class="sidebar fixed top-0 right-0 w-64 md:w-80 bg-gradient-to-br from-purple-800 to-blue-800 shadow-2xl z-50 p-6 flex flex-col space-y-4 rounded-l-xl border-l border-white border-opacity-20">
         <div class="text-right mb-8">
             <div id="closeBtn" class="hamburger-icon open self-end cursor-pointer">
                 <span></span>
