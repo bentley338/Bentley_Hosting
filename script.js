@@ -15,6 +15,8 @@ function openSidebar() {
         item.offsetHeight; /* Trigger reflow */
         item.style.animation = null;
     });
+    // Penting: Mencegah scroll pada body saat sidebar terbuka
+    document.body.style.overflow = 'hidden';
 }
 
 // Fungsi untuk menutup sidebar
@@ -22,6 +24,8 @@ function closeSidebar() {
     sidebar.classList.remove('open');
     overlay.classList.remove('active');
     hamburgerBtn.classList.remove('open'); // Animasi ikon hamburger kembali ke semula
+    // Penting: Mengizinkan scroll pada body kembali saat sidebar tertutup
+    document.body.style.overflow = ''; // Mengembalikan ke default
 }
 
 // Event listener untuk tombol hamburger
@@ -38,8 +42,9 @@ menuItems.forEach(item => {
     item.addEventListener('click', closeSidebar);
 });
 
-// Pastikan sidebar tertutup saat halaman dimuat (untuk kasus refresh)
+// Pastikan sidebar tertutup dan scroll body diizinkan saat halaman dimuat (untuk kasus refresh)
 window.onload = () => {
     closeSidebar();
+    document.body.style.overflow = ''; // Pastikan scroll body diizinkan saat load
 };
 
