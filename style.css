@@ -1,10 +1,21 @@
-/* Mengatur font Inter secara global */
-body {
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden; /* Mencegah scroll horizontal saat menu terbuka */
+/* ==================================================================== */
+/* PERBAIKAN KRUSIAL UNTUK MENGHILANGKAN SCROLL */
+/* ==================================================================== */
+html, body {
+    height: 100%; /* Pastikan html dan body mengambil tinggi penuh */
     margin: 0;
     padding: 0;
 }
+
+body {
+    overflow: hidden; /* Ini SANGAT PENTING: Mencegah halaman utama scroll */
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* ==================================================================== */
+/* Sisa Gaya CSS */
+/* ==================================================================== */
 
 /* Animasi background yang bergerak */
 @keyframes gradient-animation {
@@ -23,8 +34,8 @@ body {
 .sidebar {
     transform: translateX(100%); /* Sembunyikan menu di luar layar (kanan) */
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Animasi slide-in/out */
-    height: 100vh; /* PENTING: Memastikan sidebar memenuhi tinggi viewport */
-    overflow-y: auto; /* Memungkinkan scroll internal jika konten terlalu banyak (meskipun sudah dioptimalkan) */
+    height: 100vh; /* Memastikan sidebar memenuhi tinggi seluruh viewport */
+    overflow-y: auto; /* Memungkinkan scroll internal HANYA jika konten menu sangat banyak */
     box-sizing: border-box; /* Memastikan padding tidak menambah tinggi total */
 }
 
