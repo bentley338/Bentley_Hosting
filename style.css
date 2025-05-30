@@ -256,7 +256,7 @@ header {
 /* Mobile Header Navigation (Dropdown dari Header) */
 .mobile-header-nav {
     position: fixed; /* Posisi fixed agar menutupi konten */
-    top: 0;
+    top: 0; /* Mulai dari atas layar */
     right: 0;
     width: 250px; /* Lebar sidebar */
     height: 100%; /* Tinggi penuh */
@@ -279,35 +279,55 @@ header {
     visibility: visible;
 }
 
+/* Overlay saat menu mobile aktif */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap transparan */
+    backdrop-filter: blur(5px); /* Efek blur */
+    z-index: 94; /* Di bawah sidebar, di atas konten */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 .mobile-header-nav .nav-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 15px; /* Jarak antara ikon dan teks */
     padding: 18px 25px; /* Padding item lebih besar */
     text-decoration: none;
     color: var(--text-primary);
     font-size: 1.1em;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah */
 }
 
 .mobile-header-nav .nav-item:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Hilangkan garis pemisah di item terakhir */
 }
 
 .mobile-header-nav .nav-item i {
     font-size: 1.5em; /* Ikon lebih besar */
-    color: var(--accent-cyan);
+    color: var(--accent-cyan); /* Warna ikon */
 }
 
 .mobile-header-nav .nav-item.active {
-    background-color: rgba(138, 43, 226, 0.15);
+    background-color: rgba(138, 43, 226, 0.15); /* Latar belakang item aktif */
     color: var(--accent-purple);
 }
 
 .mobile-header-nav .nav-item:hover:not(.active) {
-    background-color: rgba(0, 255, 255, 0.08);
+    background-color: rgba(0, 255, 255, 0.08); /* Latar belakang hover transparan */
     color: var(--accent-cyan);
 }
 
@@ -1028,28 +1048,48 @@ header {
         display: none;
     }
 
-    /* Mobile Header Navigation (Dropdown dari Header) */
+    /* Mobile Header Navigation (Sidebar dari Kanan) */
     .mobile-header-nav {
-        position: fixed; /* Posisi fixed agar menutupi konten */
+        position: fixed; /* Tetap di layar */
         top: 0;
         right: 0;
         width: 250px; /* Lebar sidebar */
-        height: 100%; /* Tinggi penuh */
+        height: 100%; /* Tinggi penuh layar */
         background-color: var(--bg-secondary);
-        border-left: 1px solid var(--border-color); /* Border di kiri */
-        box-shadow: -8px 0 20px var(--shadow-color); /* Bayangan ke kiri */
-        z-index: 95; /* Di atas konten, di bawah preloader */
-        overflow-y: auto; /* Scroll jika konten menu panjang */
+        border-left: 1px solid var(--border-color);
+        box-shadow: -8px 0 20px var(--shadow-color);
+        z-index: 95; /* Di atas konten utama */
+        overflow-y: auto; /* Scroll jika item menu banyak */
         
-        /* Animasi slide-in dari kanan */
-        transform: translateX(100%); /* Sembunyikan di luar layar */
-        opacity: 0; /* Mulai dengan transparan */
+        /* Animasi slide-in/out */
+        transform: translateX(100%); /* Sembunyikan di luar layar kanan */
+        opacity: 0;
         visibility: hidden;
         transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s ease-out;
     }
 
     .mobile-header-nav.active {
-        transform: translateX(0); /* Munculkan */
+        transform: translateX(0); /* Munculkan ke dalam layar */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Overlay saat menu mobile aktif */
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap transparan */
+        backdrop-filter: blur(5px); /* Efek blur */
+        z-index: 94; /* Di bawah sidebar, di atas konten */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+    }
+
+    .mobile-menu-overlay.active {
         opacity: 1;
         visibility: visible;
     }
@@ -1057,32 +1097,32 @@ header {
     .mobile-header-nav .nav-item {
         display: flex;
         align-items: center;
-        gap: 15px; /* Jarak antara ikon dan teks */
-        padding: 18px 25px; /* Padding item lebih besar */
+        gap: 15px;
+        padding: 18px 25px;
         text-decoration: none;
         color: var(--text-primary);
         font-size: 1.1em;
         font-weight: 500;
         transition: background-color 0.3s ease, color 0.3s ease;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .mobile-header-nav .nav-item:last-child {
-        border-bottom: none; /* Hilangkan garis pemisah di item terakhir */
+        border-bottom: none;
     }
 
     .mobile-header-nav .nav-item i {
-        font-size: 1.5em; /* Ikon lebih besar */
-        color: var(--accent-cyan); /* Warna ikon */
+        font-size: 1.5em;
+        color: var(--accent-cyan);
     }
 
     .mobile-header-nav .nav-item.active {
-        background-color: rgba(138, 43, 226, 0.15); /* Latar belakang item aktif */
+        background-color: rgba(138, 43, 226, 0.15);
         color: var(--accent-purple);
     }
 
     .mobile-header-nav .nav-item:hover:not(.active) {
-        background-color: rgba(0, 255, 255, 0.08); /* Latar belakang hover transparan */
+        background-color: rgba(0, 255, 255, 0.08);
         color: var(--accent-cyan);
     }
 
@@ -1090,7 +1130,7 @@ header {
     /* Pastikan tidak ada style bottom-nav yang tersisa */
 
     #scroll-to-top {
-        bottom: 30px; /* Sesuaikan posisi karena tidak ada bottom-nav */
+        bottom: 30px;
         width: 50px;
         height: 50px;
         font-size: 1.5em;
