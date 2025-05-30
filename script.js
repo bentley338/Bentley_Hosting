@@ -30,30 +30,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fungsionalitas Toggle Menu Hamburger (untuk mobile)
     const menuToggleButton = document.querySelector('.menu-toggle');
-    const mobileHeaderNav = document.querySelector('.mobile-header-nav'); // Target menu mobile
+    const mobileHeaderNav = document.querySelector('.mobile-header-nav'); // Target sidebar mobile
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay'); // Target overlay
 
-    if (menuToggleButton && mobileHeaderNav) {
+    if (menuToggleButton && mobileHeaderNav && mobileMenuOverlay) {
         menuToggleButton.addEventListener('click', (event) => {
             event.stopPropagation(); // Mencegah klik menyebar ke document
             mobileHeaderNav.classList.toggle('active');
-            if (mobileHeaderNav.classList.contains('active')) {
-                document.addEventListener('click', closeMenuOutside);
-            } else {
-                document.removeEventListener('click', closeMenuOutside);
-            }
+            mobileMenuOverlay.classList.toggle('active'); // Aktifkan/nonaktifkan overlay
+            document.body.style.overflow = mobileHeaderNav.classList.contains('active') ? 'hidden' : ''; // Nonaktifkan scroll body
         });
 
-        function closeMenuOutside(event) {
-            if (!menuToggleButton.contains(event.target) && !mobileHeaderNav.contains(event.target)) {
-                mobileHeaderNav.classList.remove('active');
-                document.removeEventListener('click', closeMenuOutside);
-            }
-        }
+        // Tutup menu saat overlay diklik
+        mobileMenuOverlay.addEventListener('click', () => {
+            mobileHeaderNav.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Aktifkan kembali scroll body
+        });
 
         // Tutup menu saat item navigasi diklik
         mobileHeaderNav.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', () => {
                 mobileHeaderNav.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Aktifkan kembali scroll body
             });
         });
     }
