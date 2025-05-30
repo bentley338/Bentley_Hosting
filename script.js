@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.stopPropagation(); // Mencegah klik menyebar ke document
             mobileHeaderNav.classList.toggle('active');
             if (mobileHeaderNav.classList.contains('active')) {
+                // Tambahkan event listener ke document untuk menutup menu jika klik di luar
                 document.addEventListener('click', closeMenuOutside);
             } else {
                 document.removeEventListener('click', closeMenuOutside);
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function closeMenuOutside(event) {
+            // Jika klik bukan pada tombol menu dan bukan di dalam menu itu sendiri
             if (!menuToggleButton.contains(event.target) && !mobileHeaderNav.contains(event.target)) {
                 mobileHeaderNav.classList.remove('active');
                 document.removeEventListener('click', closeMenuOutside);
