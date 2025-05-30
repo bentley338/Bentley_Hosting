@@ -60,11 +60,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Menandai item navigasi aktif (untuk desktop dan mobile)
     const currentPath = window.location.pathname.split('/').pop();
-    const allNavItems = document.querySelectorAll('.desktop-nav .nav-item, .mobile-header-nav .nav-item');
+    const desktopNavItems = document.querySelectorAll('.desktop-nav .nav-item');
+    const mobileNavItems = document.querySelectorAll('.mobile-header-nav .nav-item');
 
-    allNavItems.forEach(item => {
+    // Untuk Desktop Nav
+    desktopNavItems.forEach(item => {
         const itemHref = item.getAttribute('href');
-        item.classList.remove('active'); // Hapus aktif dari semua dulu
+        item.classList.remove('active');
+        if (currentPath === '' && itemHref === 'index.html') {
+            item.classList.add('active');
+        } else if (itemHref === currentPath) {
+            item.classList.add('active');
+        }
+    });
+
+    // Untuk Mobile Nav
+    mobileNavItems.forEach(item => {
+        const itemHref = item.getAttribute('href');
+        item.classList.remove('active');
         if (currentPath === '' && itemHref === 'index.html') {
             item.classList.add('active');
         } else if (itemHref === currentPath) {
