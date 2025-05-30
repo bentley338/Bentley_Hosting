@@ -253,9 +253,9 @@ header {
     background-color: var(--accent-purple);
 }
 
-/* Mobile Header Navigation (Dropdown dari Header) */
+/* Mobile Header Navigation (Sidebar dari Kanan) */
 .mobile-header-nav {
-    position: fixed; /* Posisi fixed agar menutupi konten */
+    position: fixed; /* Tetap di layar */
     top: 0; /* Mulai dari atas layar */
     right: 0;
     width: 250px; /* Lebar sidebar */
@@ -303,13 +303,17 @@ header {
     display: flex;
     align-items: center;
     gap: 15px; /* Jarak antara ikon dan teks */
-    padding: 18px 25px; /* Padding item lebih besar */
+    padding: 12px 20px; /* Padding item lebih kecil */
     text-decoration: none;
     color: var(--text-primary);
-    font-size: 1.1em;
+    font-size: 1em; /* Ukuran font lebih kecil */
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah */
+}
+
+.mobile-header-nav .nav-item:first-child { /* Gaya khusus untuk item Home */
+    padding-top: 20px; /* Padding atas lebih besar */
 }
 
 .mobile-header-nav .nav-item:last-child {
@@ -317,7 +321,7 @@ header {
 }
 
 .mobile-header-nav .nav-item i {
-    font-size: 1.5em; /* Ikon lebih besar */
+    font-size: 1.3em; /* Ikon lebih kecil */
     color: var(--accent-cyan); /* Warna ikon */
 }
 
@@ -1051,25 +1055,25 @@ header {
     /* Mobile Header Navigation (Sidebar dari Kanan) */
     .mobile-header-nav {
         position: fixed; /* Tetap di layar */
-        top: 0;
+        top: 0; /* Mulai dari atas layar */
         right: 0;
         width: 250px; /* Lebar sidebar */
-        height: 100%; /* Tinggi penuh layar */
+        height: 100%; /* Tinggi penuh */
         background-color: var(--bg-secondary);
-        border-left: 1px solid var(--border-color);
-        box-shadow: -8px 0 20px var(--shadow-color);
-        z-index: 95; /* Di atas konten utama */
-        overflow-y: auto; /* Scroll jika item menu banyak */
+        border-left: 1px solid var(--border-color); /* Border di kiri */
+        box-shadow: -8px 0 20px var(--shadow-color); /* Bayangan ke kiri */
+        z-index: 95; /* Di atas konten, di bawah preloader */
+        overflow-y: auto; /* Scroll jika konten menu panjang */
         
-        /* Animasi slide-in/out */
-        transform: translateX(100%); /* Sembunyikan di luar layar kanan */
+        /* Animasi slide-in dari kanan */
+        transform: translateX(100%); /* Sembunyikan di luar layar */
         opacity: 0;
         visibility: hidden;
         transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s ease-out;
     }
 
     .mobile-header-nav.active {
-        transform: translateX(0); /* Munculkan ke dalam layar */
+        transform: translateX(0); /* Munculkan */
         opacity: 1;
         visibility: visible;
     }
@@ -1097,32 +1101,36 @@ header {
     .mobile-header-nav .nav-item {
         display: flex;
         align-items: center;
-        gap: 15px;
-        padding: 18px 25px;
+        gap: 15px; /* Jarak antara ikon dan teks */
+        padding: 12px 20px; /* Padding item lebih kecil */
         text-decoration: none;
         color: var(--text-primary);
-        font-size: 1.1em;
+        font-size: 1em; /* Ukuran font lebih kecil */
         font-weight: 500;
         transition: background-color 0.3s ease, color 0.3s ease;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah */
+    }
+
+    .mobile-header-nav .nav-item:first-child { /* Gaya khusus untuk item Home */
+        padding-top: 20px; /* Padding atas lebih besar */
     }
 
     .mobile-header-nav .nav-item:last-child {
-        border-bottom: none;
+        border-bottom: none; /* Hilangkan garis pemisah di item terakhir */
     }
 
     .mobile-header-nav .nav-item i {
-        font-size: 1.5em;
-        color: var(--accent-cyan);
+        font-size: 1.3em; /* Ikon lebih kecil */
+        color: var(--accent-cyan); /* Warna ikon */
     }
 
     .mobile-header-nav .nav-item.active {
-        background-color: rgba(138, 43, 226, 0.15);
+        background-color: rgba(138, 43, 226, 0.15); /* Latar belakang item aktif */
         color: var(--accent-purple);
     }
 
     .mobile-header-nav .nav-item:hover:not(.active) {
-        background-color: rgba(0, 255, 255, 0.08);
+        background-color: rgba(0, 255, 255, 0.08); /* Latar belakang hover transparan */
         color: var(--accent-cyan);
     }
 
