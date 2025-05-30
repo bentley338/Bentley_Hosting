@@ -255,27 +255,26 @@ header {
 
 /* Mobile Header Navigation (Dropdown dari Header) */
 .mobile-header-nav {
-    position: absolute; /* Posisi absolut relatif terhadap header */
-    top: calc(100% + 10px); /* Muncul di bawah header, sedikit jarak */
-    right: 20px; /* Sejajar dengan ikon di kanan */
-    width: 100%;
-    max-width: 200px; /* Batasi lebar dropdown */
+    position: fixed; /* Posisi fixed agar menutupi konten */
+    top: 0;
+    right: 0;
+    width: 250px; /* Lebar sidebar */
+    height: 100%; /* Tinggi penuh */
     background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 15px; /* Sudut membulat */
-    box-shadow: 0 8px 20px var(--shadow-color);
-    z-index: 90;
-    overflow: hidden;
-
-    /* Animasi slide-down */
-    max-height: 0;
-    opacity: 0;
+    border-left: 1px solid var(--border-color); /* Border di kiri */
+    box-shadow: -8px 0 20px var(--shadow-color); /* Bayangan ke kiri */
+    z-index: 95; /* Di atas konten, di bawah preloader */
+    overflow-y: auto; /* Scroll jika konten menu panjang */
+    
+    /* Animasi slide-in dari kanan */
+    transform: translateX(100%); /* Sembunyikan di luar layar */
+    opacity: 0; /* Mulai dengan transparan */
     visibility: hidden;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s ease-out;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s ease-out;
 }
 
 .mobile-header-nav.active {
-    max-height: 300px; /* Cukup tinggi untuk menampung item */
+    transform: translateX(0); /* Munculkan */
     opacity: 1;
     visibility: visible;
 }
@@ -283,32 +282,32 @@ header {
 .mobile-header-nav .nav-item {
     display: flex;
     align-items: center;
-    gap: 15px; /* Jarak antara ikon dan teks */
-    padding: 15px 20px; /* Padding item */
+    gap: 15px;
+    padding: 18px 25px; /* Padding item lebih besar */
     text-decoration: none;
     color: var(--text-primary);
     font-size: 1.1em;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .mobile-header-nav .nav-item:last-child {
-    border-bottom: none; /* Hilangkan garis pemisah di item terakhir */
+    border-bottom: none;
 }
 
 .mobile-header-nav .nav-item i {
-    font-size: 1.4em;
-    color: var(--accent-cyan); /* Warna ikon */
+    font-size: 1.5em; /* Ikon lebih besar */
+    color: var(--accent-cyan);
 }
 
 .mobile-header-nav .nav-item.active {
-    background-color: rgba(138, 43, 226, 0.15); /* Latar belakang item aktif */
+    background-color: rgba(138, 43, 226, 0.15);
     color: var(--accent-purple);
 }
 
 .mobile-header-nav .nav-item:hover:not(.active) {
-    background-color: rgba(0, 255, 255, 0.08); /* Latar belakang hover transparan */
+    background-color: rgba(0, 255, 255, 0.08);
     color: var(--accent-cyan);
 }
 
@@ -645,8 +644,8 @@ header {
 }
 
 .feature-item h3 {
-    font-size: 1.5em;
     color: var(--accent-pink);
+    font-size: 1.5em;
     margin-bottom: 15px;
     font-weight: 700;
 }
@@ -928,7 +927,7 @@ header {
 /* Tombol Scroll to Top */
 #scroll-to-top {
     position: fixed;
-    bottom: 30px; /* Sesuaikan posisi karena tidak ada bottom-nav */
+    bottom: 30px;
     right: 25px;
     background-color: var(--accent-purple);
     color: white;
@@ -1031,27 +1030,26 @@ header {
 
     /* Mobile Header Navigation (Dropdown dari Header) */
     .mobile-header-nav {
-        position: absolute;
-        top: 100%; /* Muncul di bawah header */
-        right: 20px; /* Sejajar dengan ikon di kanan */
-        width: 100%;
-        max-width: 200px; /* Batasi lebar dropdown */
+        position: fixed; /* Posisi fixed agar menutupi konten */
+        top: 0;
+        right: 0;
+        width: 250px; /* Lebar sidebar */
+        height: 100%; /* Tinggi penuh */
         background-color: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        border-radius: 15px; /* Sudut membulat */
-        box-shadow: 0 8px 20px var(--shadow-color);
-        z-index: 90; /* Di bawah header tapi di atas konten */
-        overflow: hidden;
-
-        /* Animasi slide-down */
-        max-height: 0;
-        opacity: 0;
+        border-left: 1px solid var(--border-color); /* Border di kiri */
+        box-shadow: -8px 0 20px var(--shadow-color); /* Bayangan ke kiri */
+        z-index: 95; /* Di atas konten, di bawah preloader */
+        overflow-y: auto; /* Scroll jika konten menu panjang */
+        
+        /* Animasi slide-in dari kanan */
+        transform: translateX(100%); /* Sembunyikan di luar layar */
+        opacity: 0; /* Mulai dengan transparan */
         visibility: hidden;
-        transition: max-height 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s ease-out;
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s ease-out;
     }
 
     .mobile-header-nav.active {
-        max-height: 300px; /* Cukup tinggi untuk menampung item */
+        transform: translateX(0); /* Munculkan */
         opacity: 1;
         visibility: visible;
     }
@@ -1060,7 +1058,7 @@ header {
         display: flex;
         align-items: center;
         gap: 15px; /* Jarak antara ikon dan teks */
-        padding: 15px 20px; /* Padding item */
+        padding: 18px 25px; /* Padding item lebih besar */
         text-decoration: none;
         color: var(--text-primary);
         font-size: 1.1em;
@@ -1074,7 +1072,7 @@ header {
     }
 
     .mobile-header-nav .nav-item i {
-        font-size: 1.4em;
+        font-size: 1.5em; /* Ikon lebih besar */
         color: var(--accent-cyan); /* Warna ikon */
     }
 
@@ -1088,7 +1086,7 @@ header {
         color: var(--accent-cyan);
     }
 
-    /* Footer / Bottom Navigation Dihapus */
+    /* Footer Dihapus */
     /* Pastikan tidak ada style bottom-nav yang tersisa */
 
     #scroll-to-top {
