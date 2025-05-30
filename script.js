@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Untuk Desktop Nav
     desktopNavItems.forEach(item => {
         const itemHref = item.getAttribute('href');
-        item.classList.remove('active');
+        item.classList.remove('active'); // Hapus aktif dari semua dulu
         if (currentPath === '' && itemHref === 'index.html') {
             item.classList.add('active');
         } else if (itemHref === currentPath) {
