@@ -312,8 +312,9 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis pemisah */
 }
 
-.mobile-header-nav .nav-item:first-child { /* Gaya khusus untuk item Home */
-    padding-top: 20px; /* Padding atas lebih besar */
+/* Penyesuaian khusus untuk item pertama (Home) */
+.mobile-header-nav .nav-item:first-child {
+    padding-top: 20px; /* Padding atas lebih besar untuk item pertama */
 }
 
 .mobile-header-nav .nav-item:last-child {
@@ -668,8 +669,8 @@ header {
 }
 
 .feature-item h3 {
-    font-size: 1.5em;
     color: var(--accent-pink);
+    font-size: 1.5em;
     margin-bottom: 15px;
     font-weight: 700;
 }
