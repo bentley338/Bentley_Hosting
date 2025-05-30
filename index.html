@@ -3,77 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Utama Web Super Keren (Tanpa Scroll)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Bentley Hosting - Beranda</title>
+    <meta name="description" content="Bentley Hosting menyediakan solusi panel, script, dan bot terbaik untuk kebutuhan digital Anda. Dapatkan panel unlimited, script canggih, dan layanan reseller terpercaya.">
+    <meta name="keywords" content="Bentley Hosting, panel, script, bot, reseller, pushkontak, VGH VIP, SC Cpanel, SC MD">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/index.html"> <meta property="og:title" content="Bentley Hosting - Your Digital Solutions">
+    <meta property="og:description" content="Bentley Hosting menyediakan solusi panel, script, dan bot terbaik untuk kebutuhan digital Anda.">
+    <meta property="og:image" content="https://files.catbox.moe/pisc31.jpg"> <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="animated-background min-h-screen flex flex-col">
-
-    <div id="overlay" class="overlay fixed inset-0 z-40"></div>
-
-    <header class="w-full bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-4 flex justify-between items-center shadow-lg relative z-30">
-        <div class="text-2xl md:text-3xl font-bold text-white drop-shadow-md">
-            BENTLEY HOSTING
-        </div>
-        <div id="hamburgerBtn" class="hamburger-icon z-50">
+<body>
+    <div id="preloader">
+        <div class="loading-logo">B</div>
+        <div class="loading-text">Tunggu banh. Bentley Hosting segera dimuat.</div>
+        <div class="loading-subtitle">Menyiapkan sistem...</div>
+        <div class="loading-animation">
             <span></span>
             <span></span>
             <span></span>
         </div>
-    </header>
+    </div>
 
-    <main class="flex-grow flex flex-col items-center justify-center p-4 text-white text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-            Hi, I'm <span class="text-purple-300">Bentley Hosting</span>
-        </h1>
-        <p class="text-lg md:text-xl mb-8 opacity-90">
-            Your Trusted Source for Bot & Panel Services
-        </p>
-        <div class="relative w-full max-w-lg mx-auto rounded-xl overflow-hidden shadow-2xl border border-white border-opacity-30 p-2 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm">
-            <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">IT'S ME</div>
-            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">ME BENTLEY HOSTING</div>
-            <img src="https://placehold.co/600x400/8A2BE2/FFFFFF?text=AK+12+Girls+Frontline+Sexy" alt="AK 12 Girls Frontline Sexy" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="mt-8 text-center text-white text-base opacity-90 max-w-md">
-            <p>Bentley Hosting menyediakan berbagai solusi panel, script, dan bot untuk kebutuhan digital Anda.</p>
-        </div>
-    </main>
+    <div class="container">
+        <header>
+            <div class="logo">BENTLEY HOSTING</div>
+            <nav class="main-nav">
+                <div class="desktop-nav">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="services.html" class="nav-item">Services</a>
+                    <a href="testimonials.html" class="nav-item">Testi</a>
+                    <a href="contact.html" class="nav-item">Contact</a>
+                    <a href="about.html" class="nav-item">About</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                </div>
+                <i class="fas fa-moon toggle-mode" title="Toggle Mode Gelap/Terang"></i>
+                <i class="fas fa-bars menu-toggle" title="Menu Mobile"></i>
+            </nav>
+        </header>
 
-    <nav id="sidebar" class="sidebar fixed top-0 right-0 w-64 md:w-80 bg-gradient-to-br from-purple-800 to-blue-800 shadow-2xl z-50 p-6 flex flex-col space-y-4 rounded-l-xl border-l border-white border-opacity-20">
-        <div class="text-right mb-8">
-            <div id="closeBtn" class="hamburger-icon open self-end cursor-pointer">
-                <span></span>
-                <span></span>
-                <span></span>
+        <nav class="mobile-header-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="services.html" class="nav-item">
+                <i class="fas fa-cogs"></i>
+                <span>Services</span>
+            </a>
+            <a href="testimonials.html" class="nav-item">
+                <i class="fas fa-star"></i>
+                <span>Testi</span>
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>Contact</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="faq.html" class="nav-item">
+                <i class="fas fa-question-circle"></i>
+                <span>FAQ</span>
+            </a>
+        </nav>
+
+        <section class="hero reveal-item">
+            <div class="hero-header-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Bentley Hosting</span></h1>
+                <p class="hero-slogan">Your Trusted Source for Bot & Panel Services</p>
             </div>
-        </div>
+            <div class="image-card reveal-item">
+                <div class="tags">
+                    <span class="tag">IT'S ME</span>
+                    <span class="tag">ME BENTLEY HOSTING</span>
+                </div>
+                <img src="https://files.catbox.moe/pisc31.jpg" alt="Bentley Hosting Profile" class="main-image">
+                <div class="image-overlay-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            <div class="hero-description-content reveal-item">
+                <p class="hero-description">
+                    Bentley Hosting menyediakan berbagai solusi panel, script, dan bot untuk kebutuhan digital Anda.
+                    Dapatkan panel unlimited, script canggih, dan layanan reseller dengan harga terjangkau dan dukungan terbaik.
+                </p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn primary"><span>Layanan Kami <i class="fas fa-arrow-right"></i></span></a>
+                    <a href="about.html" class="btn secondary"><span>Tentang Kami</span></a>
+                    <a href="testimonials.html" class="btn tertiary"><span>Testimoni</span></a>
+                </div>
+            </div>
+        </section>
 
-        <a href="#" class="flex items-center text-white text-xl font-semibold py-3 px-4 rounded-lg menu-item-hover menu-item">
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-            Home
-        </a>
-        <a href="#" class="flex items-center text-white text-xl font-semibold py-3 px-4 rounded-lg menu-item-hover menu-item">
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.3 8.342a1 1 0 011.414 0L10 11.586l3.286-3.286a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path></svg>
-            Services
-        </a>
-        <a href="#" class="flex items-center text-white text-xl font-semibold py-3 px-4 rounded-lg menu-item-hover menu-item">
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
-            Testi
-        </a>
-        <a href="#" class="flex items-center text-white text-xl font-semibold py-3 px-4 rounded-lg menu-item-hover menu-item">
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.103 6.103l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-            Contact
-        </a>
-        <a href="#" class="flex items-center text-white text-xl font-semibold py-3 px-4 rounded-lg menu-item-hover menu-item">
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9.293 12.95a1 1 0 00.95.69h.514a1 1 0 00.95-.69l.74-4.435a1 1 0 00-.54-1.06L10 6.414l-1.548.774a1 1 0 00-.54 1.06l.74 4.435z" clip-rule="evenodd"></path></svg>
-            About
-        </a>
-        <a href="#" class="flex items-center text-white text-xl font-semibold py-3 px-4 rounded-lg menu-item-hover menu-item">
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-4a1 1 0 11-2 0 1 1 0 012 0zM9.293 12.95a1 1 0 00.95.69h.514a1 1 0 00.95-.69l.74-4.435a1 1 0 00-.54-1.06L10 6.414l-1.548.774a1 1 0 00-.54 1.06l.74 4.435z" clip-rule="evenodd"></path></svg>
-            FAQ
-        </a>
-    </nav>
+        <section class="section-block reveal-item">
+            <h2>Mengapa Memilih Kami?</h2>
+            <div class="feature-grid">
+                <div class="feature-item reveal-item">
+                    <i class="fas fa-shield-alt icon-large"></i>
+                    <h3>Keamanan Terjamin</h3>
+                    <p>Produk kami diuji secara ketat untuk performa dan keamanan data Anda.</p>
+                </div>
+                <div class="feature-item reveal-item">
+                    <i class="fas fa-rocket icon-large"></i>
+                    <h3>Performa Anti Delay</h3>
+                    <p>VPS dengan spek tinggi memastikan layanan Anda berjalan lancar tanpa hambatan.</p>
+                </div>
+                <div class="feature-item reveal-item">
+                    <i class="fas fa-headset icon-large"></i>
+                    <h3>Dukungan Responsif</h3>
+                    <p>Tim kami siap membantu Anda kapan pun Anda butuh dengan cepat dan profesional.</p>
+                <a href="about.html" class="btn primary btn-small mt-4"><span>Detail <i class="fas fa-arrow-right"></i></span></a>
+                </div>
+                <div class="feature-item reveal-item">
+                    <i class="fas fa-dollar-sign icon-large"></i>
+                    <h3>Harga Kompetitif</h3>
+                    <p>Dapatkan nilai terbaik untuk setiap investasi Anda dengan penawaran terjangkau.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block reveal-item">
+            <h2>Layanan Unggulan Kami</h2>
+            <div class="service-grid-home">
+                <div class="service-item-home reveal-item">
+                    <h3>OPEN PANEL UNLI PRIVATE</h3>
+                    <p>Panel hosting pribadi dengan akses tak terbatas, admin hanya Anda.</p>
+                    <span class="price">Mulai dari 3K</span>
+                    <a href="services.html" class="btn primary btn-small"><span>Detail <i class="fas fa-arrow-right"></i></span></a>
+                </div>
+                <div class="service-item-home reveal-item">
+                    <h3>OPEN RESELLER PANEL</h3>
+                    <p>Kesempatan emas untuk menjual bot pushkontak dan create panel sepuasnya.</p>
+                    <span class="price">Hanya 4K</span>
+                    <a href="services.html" class="btn secondary btn-small"><span>Detail <i class="fas fa-arrow-right"></i></span></a>
+                </div>
+                <div class="service-item-home reveal-item">
+                    <h3>JASA CREATE SC</h3>
+                    <p>Buat script sesuai permintaan Anda: SC Cpanel, SC MD, SC Pushkontak.</p>
+                    <span class="price">Mulai dari 3K</span>
+                    <a href="services.html" class="btn tertiary btn-small"><span>Detail <i class="fas fa-arrow-right"></i></span></a>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="services.html" class="btn primary"><span>Lihat Semua Layanan <i class="fas fa-arrow-right"></i></span></a>
+            </div>
+        </section>
+
+        <section class="section-block reveal-item">
+            <h2>Apa Kata Klien Kami</h2>
+            <div class="testimonial-grid-home">
+                <div class="testimonial-item-home reveal-item">
+                    <p>"Layanan panelnya sangat responsif dan stabil. Sangat direkomendasikan!"</p>
+                    <span class="source">- Pelanggan Puas #1</span>
+                </div>
+                <div class="testimonial-item-home reveal-item">
+                    <p>"Script botnya bekerja sempurna, supportnya juga cepat tanggap. Mantap!"</p>
+                    <span class="source">- Reseller Sukses</span>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="testimonials.html" class="btn secondary"><span>Baca Lebih Banyak Testimoni <i class="fas fa-arrow-right"></i></span></a>
+            </div>
+        </section>
+
+        <section class="section-block reveal-item">
+            <h2>Siap Memulai?</h2>
+            <p class="hero-description text-center">
+                Jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau siap untuk memulai solusi digital Anda.
+            </p>
+            <div class="text-center">
+                <a href="contact.html" class="btn primary"><span>Hubungi Kami Sekarang <i class="fas fa-phone-alt"></i></span></a>
+            </div>
+        </section>
+
+    </div>
+
+    <button id="scroll-to-top" title="Gulir ke Atas"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
